@@ -2,9 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
+## Installation
+
+Run `npm run install-all` this command will install the packages needed for both the Angular app and Node server.
+
 ## Development server
 
-Run `npm run install-all` this command will install the packages needed for both the Angular app and Node express server. Afterwards run `ng serve` in the project root to start the angular server then in a seperate terminal window run `cd ./node-rest-api/ && node ./index.js/` to begin the node server. Navigate to `http://localhost:4200/`, the application will automatically reload if you change any of the source files.
+ Run `ng serve` in the project root to start the angular server then in a seperate terminal window run `cd ./node-rest-api/` followed by `node ./index.js/` to begin the node server. Navigate to `http://localhost:4200/`, the application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
