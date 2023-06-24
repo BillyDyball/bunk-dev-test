@@ -12,6 +12,7 @@ payoutRoute.route("/payout").post((req, res, next) => {
         return Math.round(price * place) / place;
     }
 
+    // Consolidate expenses
     const expenses = req.body;
     const hashTable = {};
     let total = 0, numberOfPeople = 0;
