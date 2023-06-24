@@ -55,27 +55,6 @@ export class AppComponent {
         this.payoutService.post(this.expenses).subscribe((response: NodeResponse) => {
             console.log(response);
             this.nodeResponse = response;
-
-            // Removes object reference
-            const tempExpenses = this.expenses.map(item => new Expense(item.name, item.price));
-            const payouts = response.payouts;
-            for (let i = 0; i < payouts.length; i++) {
-                const payout = payouts[i];
-                
-                const index1 = tempExpenses.findIndex(item => item.name === payout.owes);
-                tempExpenses[index1].price += payout.amount;
-
-                const index2 = tempExpenses.findIndex(item => item.name === payout.owed);
-                tempExpenses[index2].price -= payout.amount;
-            }
-
-            if (payouts.some(item => item.amount < 0)) {
-                console.error('Incorrect response: one of the payouts is negative', response);
-            } else if (tempExpenses.map(item => item.price).reduce((a, b) => a + b) !== response.total) {
-                console.error('tempExpenses doesnt equal total from respons', tempExpenses, response);
-            } else {
-                console.log('success');
-            }
         });
     }
 }
