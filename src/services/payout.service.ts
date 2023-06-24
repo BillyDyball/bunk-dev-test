@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class PayoutService {
 
     readonly payoutEndpoint = 'http://localhost:8000/api/payout';
