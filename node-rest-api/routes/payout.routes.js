@@ -1,6 +1,5 @@
 const express = require("express");
 const payoutRoute = express.Router();
-let Payout = require("../model/payout");
 
 // Add Payout
 payoutRoute.route("/payout").post((req, res, next) => {
